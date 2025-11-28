@@ -51,7 +51,6 @@ if ($max_price !== '') {
     $params[] = $max_price; 
 }
 
-
 $stmt = $conn->prepare($sql);
 $stmt->execute($params);
 $cars = $stmt->get_result();
@@ -68,3 +67,4 @@ echo $twig->render('index.html', [
 
 $conn->close();
 ?>
+
