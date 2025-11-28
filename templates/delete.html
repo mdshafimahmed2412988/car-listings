@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Delete Car</h1>
+
+    <p>Are you sure you want to delete the car listed below?</p>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th>Mileage</th>
+            <th>Fuel Type</th>
+        </tr>
+        <tr>
+            <td>{{ car.brand }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.year }}</td>
+            <td>{{ car.price }}</td>
+            <td>{{ car.mileage }}</td>
+            <td>{{ car.fuel_type }}</td>
+        </tr>
+    </table>
+
+    <form method="POST" action="delete.php?id={{ car.id }}">
+        <button type="submit" style="color: red;">Delete this car</button>
+    </form>
+
+    <p><a href="index.php">Back to car listings</a></p>
+{% endblock %}
